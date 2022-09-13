@@ -1,0 +1,11 @@
+<button class="btn btn-warning" *ngIf="!isShow" (click)="handleClickShow()">Show</button>
+<button class="btn btn-warning" *ngIf="isShow" (click)="handleClickHiden()">Hiden</button>
+
+<h2>Programming Books List!</h2>
+
+<ul *ngIf="!isShow" class="flex flex-wrap justify-center">
+    <ng-container *ngFor="let singleBook of listBooks; let i=index">
+        <app-book [book]="singleBook" class="w-1/2 p-8 text-center">
+        </app-book>
+    </ng-container>
+</ul>
